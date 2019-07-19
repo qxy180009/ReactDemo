@@ -11,11 +11,12 @@ import { BrowserRouter,
 import reducers from './reducer'
 import Auth from './Auth.js'
 import Dashboard from './Dashboard'
+import './config'
 // thunk 得作用： 改变actionCreator的写的方式
 
 const store = createStore(reducers, compose(
   applyMiddleware(thunk),
-  window.devToolsExtension?window.devToolsExtension():()=>{}
+  window.__REDUX_DEVTOOLS_EXTENSION__?window.__REDUX_DEVTOOLS_EXTENSION__():()=>{}
 ))
 console.log(store.getState());
 

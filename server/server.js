@@ -43,7 +43,7 @@ app.get('/', function(req, res) {
   res.send('<h1>Hello World</h1>')
 })
 app.get('/data', function(req, res) {
-  User.find({user: 'Qiang'},function(err, doc){
+  User.findOne({user: 'Qiang'},function(err, doc){
     res.json(doc)
   })
 })
